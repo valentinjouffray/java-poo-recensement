@@ -10,7 +10,7 @@ import fr.diginamic.recensement.entites.Ville;
  * @author DIGINAMIC
  *
  */
-public class RecherchePopulationVille extends MenuService {
+public class RecherchePopulationVilleService extends MenuService {
 
 	@Override
 	public void traiter(Recensement rec, Scanner scanner) {

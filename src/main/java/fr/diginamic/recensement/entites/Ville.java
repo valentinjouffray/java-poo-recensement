@@ -36,6 +36,11 @@ public class Ville implements EnsemblePop {
 		this.nom = nom;
 		this.population = population;
 	}
+	
+	@Override
+	public String toString(){
+		return nom + " " + population + " hab.";
+	}
 
 	/** Getter
 	 * @return the codeRegion

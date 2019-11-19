@@ -2,7 +2,6 @@ package fr.diginamic.recensement.utils;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -25,8 +24,7 @@ public class RecensementUtils {
 		
 		List<String> lignes = null;
 		try {
-			ClassLoader classLoader = RecensementUtils.class.getClassLoader();
-			File file = new File(classLoader.getResource("recensement.csv").getFile());
+			File file = new File(cheminFichier);
 			lignes = FileUtils.readLines(file, "UTF-8");
 			
 			// On supprime la ligne d'entéte avec les noms des colonnes
