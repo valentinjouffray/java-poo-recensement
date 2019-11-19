@@ -23,7 +23,7 @@ public class Application {
 	 */
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		Recensement recensement = RecensementUtils.lire("C:/temp/recensement population 2016.csv");
+		Recensement recensement = RecensementUtils.lire("recensement.csv");
 
 		if (recensement == null) {
 			System.out.println("L'application doit s'arrétée en raison d'une erreur d'exécution.");
