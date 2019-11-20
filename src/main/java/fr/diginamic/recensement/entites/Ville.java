@@ -1,11 +1,13 @@
 package fr.diginamic.recensement.entites;
 
-/** Représente une ville
+/**
+ * Représente une ville
+ * 
  * @author DIGINAMIC
  *
  */
 public class Ville implements EnsemblePop {
-	
+
 	/** codeRegion : code de la région */
 	private String codeRegion;
 	/** nomRegion : nom de la région */
@@ -18,8 +20,10 @@ public class Ville implements EnsemblePop {
 	private String nom;
 	/** population totale */
 	private int population;
-	
-	/** Constructeur
+
+	/**
+	 * Constructeur
+	 * 
 	 * @param codeRegion code de la région
 	 * @param nomRegion nom de la région
 	 * @param codeDepartement code du département
@@ -27,99 +31,125 @@ public class Ville implements EnsemblePop {
 	 * @param nom nom de la ville
 	 * @param population population totale
 	 */
-	public Ville(String codeRegion, String nomRegion, String codeDepartement, String codeVille, String nom, int population) {
+	public Ville(String codeRegion, String nomRegion, String codeDepartement, String codeVille, String nom,
+			int population) {
 		super();
-		this.codeRegion=codeRegion;
-		this.nomRegion=nomRegion;
-		this.codeDepartement=codeDepartement;
+		this.codeRegion = codeRegion;
+		this.nomRegion = nomRegion;
+		this.codeDepartement = codeDepartement;
 		this.codeVille = codeVille;
 		this.nom = nom;
 		this.population = population;
 	}
-	
+
 	@Override
-	public String toString(){
-		return nom + " " + population + " hab.";
+	public String toString() {
+		return "Département n°" + codeDepartement + " - Ville : " + nom + " - " + population + " hab.";
 	}
 
-	/** Getter
+	/**
+	 * Getter
+	 * 
 	 * @return the codeRegion
 	 */
 	public String getCodeRegion() {
 		return codeRegion;
 	}
 
-	/** Setter
+	/**
+	 * Setter
+	 * 
 	 * @param codeRegion the codeRegion to set
 	 */
 	public void setCodeRegion(String codeRegion) {
 		this.codeRegion = codeRegion;
 	}
 
-	/** Getter
+	/**
+	 * Getter
+	 * 
 	 * @return the nomRegion
 	 */
 	public String getNomRegion() {
 		return nomRegion;
 	}
 
-	/** Setter
+	/**
+	 * Setter
+	 * 
 	 * @param nomRegion the nomRegion to set
 	 */
 	public void setNomRegion(String nomRegion) {
 		this.nomRegion = nomRegion;
 	}
 
-	/** Getter
+	/**
+	 * Getter
+	 * 
 	 * @return the codeDepartement
 	 */
 	public String getCodeDepartement() {
 		return codeDepartement;
 	}
 
-	/** Setter
+	/**
+	 * Setter
+	 * 
 	 * @param codeDepartement the codeDepartement to set
 	 */
 	public void setCodeDepartement(String codeDepartement) {
 		this.codeDepartement = codeDepartement;
 	}
 
-	/** Getter
+	/**
+	 * Getter
+	 * 
 	 * @return the codeVille
 	 */
 	public String getCodeVille() {
 		return codeVille;
 	}
 
-	/** Setter
+	/**
+	 * Setter
+	 * 
 	 * @param codeVille the codeVille to set
 	 */
 	public void setCodeVille(String codeVille) {
 		this.codeVille = codeVille;
 	}
 
-	/** Getter
+	/**
+	 * Getter
+	 * 
 	 * @return the nom
 	 */
 	public String getNom() {
 		return nom;
 	}
 
-	/** Setter
+	/**
+	 * Setter
+	 * 
 	 * @param nom the nom to set
 	 */
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
 
-	/** Getter
+	/**
+	 * Getter
+	 * 
 	 * @return the population
 	 */
+	@Override
 	public int getPopulation() {
 		return population;
 	}
 
-	/** Setter
+	/**
+	 * Setter
+	 * 
 	 * @param population the population to set
 	 */
 	public void setPopulation(int population) {

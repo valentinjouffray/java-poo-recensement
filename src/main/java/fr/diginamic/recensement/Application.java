@@ -19,12 +19,15 @@ public class Application {
 	/**
 	 * Point d'entrée
 	 * 
-	 * @param args
-	 *            arguments (non utilisés ici)
+	 * @param args arguments (non utilisés ici)
 	 */
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		Recensement recensement = RecensementUtils.lire("C:/Temp/recensement.csv");
+
+		String filePath = ClassLoader.getSystemClassLoader().getResource("recensement.csv").getFile();
+		System.out.println(filePath);
+
+		Recensement recensement = RecensementUtils.lire(filePath);
 
 		if (recensement == null) {
 			System.out.println("L'application doit s'arrétée en raison d'une erreur d'exécution.");
