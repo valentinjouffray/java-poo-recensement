@@ -25,8 +25,6 @@ public class Application {
 		Scanner scanner = new Scanner(System.in);
 
 		String filePath = ClassLoader.getSystemClassLoader().getResource("recensement.csv").getFile();
-		System.out.println(filePath);
-
 		Recensement recensement = RecensementUtils.lire(filePath);
 
 		if (recensement == null) {
