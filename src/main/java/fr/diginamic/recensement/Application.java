@@ -3,10 +3,16 @@ package fr.diginamic.recensement;
 import java.util.Scanner;
 
 import fr.diginamic.recensement.entites.Recensement;
+import fr.diginamic.recensement.exceptions.FunctionalException;
+import fr.diginamic.recensement.services.RechercheDepartementsPlusPeuplees;
 import fr.diginamic.recensement.services.RecherchePopulationBorneService;
 import fr.diginamic.recensement.services.RecherchePopulationDepartementService;
 import fr.diginamic.recensement.services.RecherchePopulationRegionService;
 import fr.diginamic.recensement.services.RecherchePopulationVilleService;
+import fr.diginamic.recensement.services.RechercheRegionsPlusPeuplees;
+import fr.diginamic.recensement.services.RechercheVillesPlusPeupleesDepartement;
+import fr.diginamic.recensement.services.RechercheVillesPlusPeupleesFrance;
+import fr.diginamic.recensement.services.RechercheVillesPlusPeupleesRegion;
 import fr.diginamic.recensement.utils.RecensementUtils;
 
 /**
@@ -29,7 +35,7 @@ public class Application {
 
 		if (recensement == null) {
 			System.out.println("L'application doit s'arrétée en raison d'une erreur d'exécution.");
-			System.exit(0);
+			System.exit(-1);
 		}
 
 		// Menu
@@ -61,9 +67,54 @@ public class Application {
 				break;
 			case 4:
 				RecherchePopulationBorneService recherchePopBorne = new RecherchePopulationBorneService();
-				recherchePopBorne.traiter(recensement, scanner);
+				try {
+					recherchePopBorne.traiter(recensement, scanner);
+				} catch (FunctionalException e) {
+					System.err.println(e.getMessage());
+				}
+				break;
+			case 5:
+				RechercheVillesPlusPeupleesDepartement rechercheVillesPlusPeupleesDepartement = new RechercheVillesPlusPeupleesDepartement();
+				try {
+					rechercheVillesPlusPeupleesDepartement.traiter(recensement, scanner);
+				} catch (FunctionalException e) {
+					System.err.println(e.getMessage());
+				}
+				break;
+			case 6:
+				RechercheVillesPlusPeupleesRegion rechercheVillesPlusPeupleesRegion = new RechercheVillesPlusPeupleesRegion();
+				try {
+					rechercheVillesPlusPeupleesRegion.traiter(recensement, scanner);
+				} catch (FunctionalException e) {
+					System.err.println(e.getMessage());
+				}
+				break;
+			case 7:
+				RechercheDepartementsPlusPeuplees rechercherDepartementsPlusPeuplees = new RechercheDepartementsPlusPeuplees();
+				try {
+					rechercherDepartementsPlusPeuplees.traiter(recensement, scanner);
+				} catch (FunctionalException e) {
+					System.err.println(e.getMessage());
+				}
+				break;
+			case 8:
+				RechercheRegionsPlusPeuplees rechercheRegionsPlusPeuplees = new RechercheRegionsPlusPeuplees();
+				try {
+					rechercheRegionsPlusPeuplees.traiter(recensement, scanner);
+				} catch (FunctionalException e) {
+					System.err.println(e.getMessage());
+				}
+				break;
+			case 9:
+				RechercheVillesPlusPeupleesFrance rechercheVillesPlusPeupleesFrance = new RechercheVillesPlusPeupleesFrance();
+				try {
+					rechercheVillesPlusPeupleesFrance.traiter(recensement, scanner);
+				} catch (FunctionalException e) {
+					System.err.println(e.getMessage());
+				}
 				break;
 			}
+
 		} while (choix != 99);
 
 		scanner.close();
@@ -79,6 +130,11 @@ public class Application {
 		System.out.println("2. Rechercher la population d'un département");
 		System.out.println("3. Rechercher la population d'une région");
 		System.out.println("4. Rechercher la population des villes d'un dept entre min et max");
+		System.out.println("5. Rechercher les N plus grandes villes d'un département.");
+		System.out.println("6. Rechercher les N plus grandes villes d'une région.");
+		System.out.println("7. Rechercher les N plus grands départements de France.");
+		System.out.println("8. Rechercher les N plus grandes régions de France.");
+		System.out.println("9. Rechercher les N plus grandes villes de France.");
 		System.out.println("99. Sortir");
 	}
 }
