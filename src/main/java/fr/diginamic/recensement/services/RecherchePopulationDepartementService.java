@@ -3,6 +3,8 @@ package fr.diginamic.recensement.services;
 import java.util.List;
 import java.util.Scanner;
 
+import org.apache.commons.lang3.math.NumberUtils;
+
 import fr.diginamic.recensement.entites.Recensement;
 import fr.diginamic.recensement.entites.Ville;
 
@@ -17,6 +19,10 @@ public class RecherchePopulationDepartementService extends MenuService {
 		
 		System.out.println("Quel est le code du département recherché ? ");
 		String choix = scanner.nextLine();
+		
+		if (!NumberUtils.isDigits(choix)) {
+			throw new RuntimeException("Le département doit être un entier.");
+		}
 		
 		List<Ville> villes = rec.getVilles();
 		int somme = 0;
