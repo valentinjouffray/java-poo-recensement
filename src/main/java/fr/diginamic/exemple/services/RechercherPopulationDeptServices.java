@@ -19,7 +19,7 @@ public class RechercherPopulationDeptServices {
 			return populationDept;
 		}
 		catch (CodeDeptNullException e){
-			System.out.println("Le code dÃ©partement n'est pas correct");
+			System.out.println("Le code département n'est pas correct");
 			return 0;
 		}
 		

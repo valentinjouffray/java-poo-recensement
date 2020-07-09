@@ -7,16 +7,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-import org.apache.commons.lang3.math.NumberUtils;
-
 import fr.diginamic.recensement.entites.Departement;
 import fr.diginamic.recensement.entites.Recensement;
 import fr.diginamic.recensement.entites.Ville;
-import fr.diginamic.recensement.exceptions.FunctionalException;
 import fr.diginamic.recensement.services.comparators.EnsemblePopComparateur;
 
 /**
- * Affichage des N d√©partements les plus peupl√©s
+ * Affichage des N dÈpartements les plus peuplÈs
  * 
  * @author DIGINAMIC
  *
@@ -24,13 +21,10 @@ import fr.diginamic.recensement.services.comparators.EnsemblePopComparateur;
 public class RechercheDepartementsPlusPeuplees extends MenuService {
 
 	@Override
-	public void traiter(Recensement recensement, Scanner scanner) throws FunctionalException {
+	public void traiter(Recensement recensement, Scanner scanner) {
 
-		System.out.println("Veuillez saisir un nombre de d√©partements:");
+		System.out.println("Veuillez saisir un nombre de dÈpartements:");
 		String nbDeptsStr = scanner.nextLine();
-		if (!NumberUtils.isDigits(nbDeptsStr)) {
-			throw new FunctionalException("Veuillez saisir un nombre entier de d√©partements.");
-		}
 		int nbDepts = Integer.parseInt(nbDeptsStr);
 
 		List<Ville> villes = recensement.getVilles();
@@ -54,7 +48,7 @@ public class RechercheDepartementsPlusPeuplees extends MenuService {
 		for (int i = 0; i < nbDepts; i++) {
 			Departement departement = departements.get(i);
 			System.out.println(
-					"D√©partement " + departement.getCode() + " : " + departement.getPopulation() + " habitants.");
+					"DÈpartement " + departement.getCode() + " : " + departement.getPopulation() + " habitants.");
 		}
 
 	}

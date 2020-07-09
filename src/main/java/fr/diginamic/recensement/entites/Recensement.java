@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/** DonnÃ©es du recensement
+/** Données du recensement
  * @author DIGINAMIC
  *
  */

@@ -1,18 +1,18 @@
 package fr.diginamic.recensement.entites;
 
 /**
- * ReprÃ©sente une ville
+ * Représente une ville
  * 
  * @author DIGINAMIC
  *
  */
 public class Ville implements EnsemblePop {
 
-	/** codeRegion : code de la rÃ©gion */
+	/** codeRegion : code de la région */
 	private String codeRegion;
-	/** nomRegion : nom de la rÃ©gion */
+	/** nomRegion : nom de la région */
 	private String nomRegion;
-	/** codeDepartement : code du dÃ©partement */
+	/** codeDepartement : code du département */
 	private String codeDepartement;
 	/** code INSEE de la ville */
 	private String codeVille;
@@ -24,9 +24,9 @@ public class Ville implements EnsemblePop {
 	/**
 	 * Constructeur
 	 * 
-	 * @param codeRegion code de la rÃ©gion
-	 * @param nomRegion nom de la rÃ©gion
-	 * @param codeDepartement code du dÃ©partement
+	 * @param codeRegion code de la région
+	 * @param nomRegion nom de la région
+	 * @param codeDepartement code du département
 	 * @param codeVille code INSEE de la ville
 	 * @param nom nom de la ville
 	 * @param population population totale
@@ -44,7 +44,7 @@ public class Ville implements EnsemblePop {
 
 	@Override
 	public String toString() {
-		return "DÃ©partement nÂ°" + codeDepartement + " - Ville : " + nom + " - " + population + " hab.";
+		return "Département nÂ°" + codeDepartement + " - Ville : " + nom + " - " + population + " hab.";
 	}
 
 	/**

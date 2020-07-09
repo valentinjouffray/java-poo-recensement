@@ -3,10 +3,9 @@ package fr.diginamic.recensement.services;
 import java.util.Scanner;
 
 import fr.diginamic.recensement.entites.Recensement;
-import fr.diginamic.recensement.exceptions.FunctionalException;
 
 /**
- * Classe reprÃ©sentant un service
+ * Classe représentant un service
  * 
  * @author DIGINAMIC
  *
@@ -14,11 +13,11 @@ import fr.diginamic.recensement.exceptions.FunctionalException;
 public abstract class MenuService {
 
 	/**
-	 * MÃ©thode abstraite de traitement que doivent possÃ©der toutes les mÃ©thodes de
+	 * Méthode abstraite de traitement que doivent posséder toutes les méthodes de
 	 * services
 	 * 
 	 * @param lignes  lignes du fichier
 	 * @param scanner scanner
 	 */
-	public abstract void traiter(Recensement recensement, Scanner scanner) throws FunctionalException;
+	public abstract void traiter(Recensement recensement, Scanner scanner);
 }

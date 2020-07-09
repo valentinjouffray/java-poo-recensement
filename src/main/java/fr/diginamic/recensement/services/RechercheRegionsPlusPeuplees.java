@@ -7,16 +7,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-import org.apache.commons.lang3.math.NumberUtils;
-
 import fr.diginamic.recensement.entites.Recensement;
 import fr.diginamic.recensement.entites.Region;
 import fr.diginamic.recensement.entites.Ville;
-import fr.diginamic.recensement.exceptions.FunctionalException;
 import fr.diginamic.recensement.services.comparators.EnsemblePopComparateur;
 
 /**
- * Affichage des 10 r√©gions les plus peupl√©es
+ * Affichage des 10 rÈgions les plus peuplÈes
  * 
  * @author DIGINAMIC
  *
@@ -24,49 +21,46 @@ import fr.diginamic.recensement.services.comparators.EnsemblePopComparateur;
 public class RechercheRegionsPlusPeuplees extends MenuService {
 
 	@Override
-	public void traiter(Recensement recensement, Scanner scanner) throws FunctionalException {
+	public void traiter(Recensement recensement, Scanner scanner) {
 
-		System.out.println("Veuillez saisir un nombre de r√©gions:");
+		System.out.println("Veuillez saisir un nombre de rÈgions:");
 		String nbRegionsStr = scanner.nextLine();
-		if (!NumberUtils.isDigits(nbRegionsStr)) {
-			throw new FunctionalException("Veuillez saisir un nombre entier de r√©gions.");
-		}
 		int nbRegions = Integer.parseInt(nbRegionsStr);
 
-		// On r√©cup√©re la liste des villes du recensement
+		// On rÈcupÈre la liste des villes du recensement
 		List<Ville> villes = recensement.getVilles();
 
-		// On cr√©√© une HashMap pour stocker les r√©gions
-		// - Cl√©: nom de la r√©gion
-		// - Valeur: instance de r√©gion
+		// On crÈÈ une HashMap pour stocker les rÈgions
+		// - ClÈ: nom de la rÈgion
+		// - Valeur: instance de rÈgion
 		Map<String, Region> mapRegions = new HashMap<>();
 
 		// On parcourt les 35800 villes, une par une
 		for (Ville ville : villes) {
 
-			// On regarde si pour une ville donn√©e, la r√©gion existe dans la map ou non
+			// On regarde si pour une ville donnÈe, la rÈgion existe dans la map ou non
 			Region region = mapRegions.get(ville.getNomRegion());
 
-			// Si la r√©gion n'existe pas, on la cr√©√©e
+			// Si la rÈgion n'existe pas, on la crÈÈe
 			if (region == null) {
 				region = new Region(ville.getCodeRegion(), ville.getNomRegion());
 				mapRegions.put(ville.getNomRegion(), region);
 			}
 
-			// Une fois qu'on a une r√©gion, on lui ajoute la ville courante
+			// Une fois qu'on a une rÈgion, on lui ajoute la ville courante
 			region.addVille(ville);
 		}
 
-		// Une fois la boucle termin√©e, on va r√©cup√©rer toutes les r√©gions qui sont dans
+		// Une fois la boucle terminÈe, on va rÈcupÈrer toutes les rÈgions qui sont dans
 		// la HashMap pour les mettre dans une liste
 		List<Region> regions = new ArrayList<Region>();
 		regions.addAll(mapRegions.values());
 
-		// On cr√©√© un comparateur de Region pour trier la liste des r√©gions dans l'ordre
-		// de populations d√©croissantes.
+		// On crÈÈ un comparateur de Region pour trier la liste des rÈgions dans l'ordre
+		// de populations dÈcroissantes.
 		Collections.sort(regions, new EnsemblePopComparateur(false));
 
-		// On affiche les 10 premi√©re r√©gions de la liste tri√©e.
+		// On affiche les 10 premiÈre rÈgions de la liste triÈe.
 		for (int i = 0; i < nbRegions; i++) {
 			Region region = regions.get(i);
 			System.out.println("Region " + region.getNom() + " : " + region.getPopulation() + " habitants.");
