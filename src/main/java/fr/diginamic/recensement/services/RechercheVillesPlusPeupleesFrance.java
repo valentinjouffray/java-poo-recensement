@@ -9,7 +9,7 @@ import fr.diginamic.recensement.entites.Ville;
 import fr.diginamic.recensement.services.comparators.EnsemblePopComparateur;
 
 /**
- * Cas d'utilisation: affichage des N villes les plus peuplées de France
+ * Cas d'utilisation: affichage des N villes les plus peuplÃ©es de France
  * 
  * @author DIGINAMIC
  *
@@ -24,7 +24,7 @@ public class RechercheVillesPlusPeupleesFrance extends MenuService {
 		int nbVilles = Integer.parseInt(nbVillesStr);
 
 		List<Ville> villes = recensement.getVilles();
-		System.out.println("Les " + nbVilles + " villes les plus peuplées de France sont :");
+		System.out.println("Les " + nbVilles + " villes les plus peuplÃ©es de France sont :");
 		Collections.sort(villes, new EnsemblePopComparateur(false));
 		for (int i = 0; i < nbVilles; i++) {
 			Ville ville = villes.get(i);

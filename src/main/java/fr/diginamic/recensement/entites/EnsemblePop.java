@@ -1,6 +1,6 @@
 package fr.diginamic.recensement.entites;
 
-/** Représente tout ce qui posséde une population: pays, région, département, canton, ville, etc...
+/** ReprÃ©sente tout ce qui possÃ©de une population: pays, rÃ©gion, dÃ©partement, canton, ville, etc...
  * @author DIGINAMIC
  *
  */

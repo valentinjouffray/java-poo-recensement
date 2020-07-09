@@ -14,9 +14,9 @@ import fr.diginamic.recensement.entites.Recensement;
  */
 public class RecensementUtils {
 
-	/** Lit le contenu du fichier en paramétre, contenant des données de recensement avec le format attendu,
+	/** Lit le contenu du fichier en paramÃ©tre, contenant des donnÃ©es de recensement avec le format attendu,
 	 * et retourne une instance de la classe Recensement avec toutes ses villes
-	 * @param cheminFichier chemin d'accés au fichier sur le disque dur
+	 * @param cheminFichier chemin d'accÃ©s au fichier sur le disque dur
 	 * @return {@link Recensement}
 	 */
 	public static Recensement lire(String cheminFichier){
@@ -27,7 +27,7 @@ public class RecensementUtils {
 			File file = new File(cheminFichier);
 			lignes = FileUtils.readLines(file, "UTF-8");
 			
-			// On supprime la ligne d'entéte avec les noms des colonnes
+			// On supprime la ligne d'entÃ©te avec les noms des colonnes
 			lignes.remove(0);
 			
 			for (String ligne: lignes){

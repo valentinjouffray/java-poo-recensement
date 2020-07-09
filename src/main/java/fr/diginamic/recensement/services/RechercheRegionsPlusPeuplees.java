@@ -13,7 +13,7 @@ import fr.diginamic.recensement.entites.Ville;
 import fr.diginamic.recensement.services.comparators.EnsemblePopComparateur;
 
 /**
- * Affichage des 10 régions les plus peuplées
+ * Affichage des 10 rÃ©gions les plus peuplÃ©es
  * 
  * @author DIGINAMIC
  *
@@ -23,44 +23,44 @@ public class RechercheRegionsPlusPeuplees extends MenuService {
 	@Override
 	public void traiter(Recensement recensement, Scanner scanner) {
 
-		System.out.println("Veuillez saisir un nombre de régions:");
+		System.out.println("Veuillez saisir un nombre de rÃ©gions:");
 		String nbRegionsStr = scanner.nextLine();
 		int nbRegions = Integer.parseInt(nbRegionsStr);
 
-		// On récupére la liste des villes du recensement
+		// On rÃ©cupÃ©re la liste des villes du recensement
 		List<Ville> villes = recensement.getVilles();
 
-		// On créé une HashMap pour stocker les régions
-		// - Clé: nom de la région
-		// - Valeur: instance de région
+		// On crÃ©Ã© une HashMap pour stocker les rÃ©gions
+		// - ClÃ©: nom de la rÃ©gion
+		// - Valeur: instance de rÃ©gion
 		Map<String, Region> mapRegions = new HashMap<>();
 
 		// On parcourt les 35800 villes, une par une
 		for (Ville ville : villes) {
 
-			// On regarde si pour une ville donnée, la région existe dans la map ou non
+			// On regarde si pour une ville donnÃ©e, la rÃ©gion existe dans la map ou non
 			Region region = mapRegions.get(ville.getNomRegion());
 
-			// Si la région n'existe pas, on la créée
+			// Si la rÃ©gion n'existe pas, on la crÃ©Ã©e
 			if (region == null) {
 				region = new Region(ville.getCodeRegion(), ville.getNomRegion());
 				mapRegions.put(ville.getNomRegion(), region);
 			}
 
-			// Une fois qu'on a une région, on lui ajoute la ville courante
+			// Une fois qu'on a une rÃ©gion, on lui ajoute la ville courante
 			region.addVille(ville);
 		}
 
-		// Une fois la boucle terminée, on va récupérer toutes les régions qui sont dans
+		// Une fois la boucle terminÃ©e, on va rÃ©cupÃ©rer toutes les rÃ©gions qui sont dans
 		// la HashMap pour les mettre dans une liste
 		List<Region> regions = new ArrayList<Region>();
 		regions.addAll(mapRegions.values());
 
-		// On créé un comparateur de Region pour trier la liste des régions dans l'ordre
-		// de populations décroissantes.
+		// On crÃ©Ã© un comparateur de Region pour trier la liste des rÃ©gions dans l'ordre
+		// de populations dÃ©croissantes.
 		Collections.sort(regions, new EnsemblePopComparateur(false));
 
-		// On affiche les 10 premiére régions de la liste triée.
+		// On affiche les 10 premiÃ©re rÃ©gions de la liste triÃ©e.
 		for (int i = 0; i < nbRegions; i++) {
 			Region region = regions.get(i);
 			System.out.println("Region " + region.getNom() + " : " + region.getPopulation() + " habitants.");

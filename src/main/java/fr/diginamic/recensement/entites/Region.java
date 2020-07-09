@@ -3,7 +3,7 @@ package fr.diginamic.recensement.entites;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Représente une région
+/** ReprÃ©sente une rÃ©gion
  * @author DIGINAMIC
  *
  */

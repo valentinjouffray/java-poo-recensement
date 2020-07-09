@@ -11,7 +11,7 @@ public class RechercherPopulationVillesDao {
 	public List<Ville> extraireVilles(String codeDept) throws CodeDeptNullException {
 		
 		if (codeDept==null){
-			throw new CodeDeptNullException("Veuillez renseigner un code département.");
+			throw new CodeDeptNullException("Veuillez renseigner un code dÃ©partement.");
 		}
 		
 		List<Ville> villes = new ArrayList<Ville>();

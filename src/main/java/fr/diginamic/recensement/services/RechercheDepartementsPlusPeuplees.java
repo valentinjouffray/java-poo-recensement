@@ -13,7 +13,7 @@ import fr.diginamic.recensement.entites.Ville;
 import fr.diginamic.recensement.services.comparators.EnsemblePopComparateur;
 
 /**
- * Affichage des N départements les plus peuplés
+ * Affichage des N dÃ©partements les plus peuplÃ©s
  * 
  * @author DIGINAMIC
  *
@@ -23,7 +23,7 @@ public class RechercheDepartementsPlusPeuplees extends MenuService {
 	@Override
 	public void traiter(Recensement recensement, Scanner scanner) {
 
-		System.out.println("Veuillez saisir un nombre de départements:");
+		System.out.println("Veuillez saisir un nombre de dÃ©partements:");
 		String nbDeptsStr = scanner.nextLine();
 		int nbDepts = Integer.parseInt(nbDeptsStr);
 
@@ -48,7 +48,7 @@ public class RechercheDepartementsPlusPeuplees extends MenuService {
 		for (int i = 0; i < nbDepts; i++) {
 			Departement departement = departements.get(i);
 			System.out.println(
-					"Département " + departement.getCode() + " : " + departement.getPopulation() + " habitants.");
+					"DÃ©partement " + departement.getCode() + " : " + departement.getPopulation() + " habitants.");
 		}
 
 	}

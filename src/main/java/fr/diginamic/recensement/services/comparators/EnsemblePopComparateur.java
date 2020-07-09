@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 import fr.diginamic.recensement.entites.EnsemblePop;
 
-/** Permet de comparer 2 instances de classe qui implémentent l'interface {@link EnsemblePop}
+/** Permet de comparer 2 instances de classe qui implÃ©mentent l'interface {@link EnsemblePop}
  * @author DIGINAMIC
  *
  */

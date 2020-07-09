@@ -10,8 +10,8 @@ import fr.diginamic.recensement.entites.Ville;
 import fr.diginamic.recensement.services.comparators.EnsemblePopComparateur;
 
 /**
- * Cas d'utilisation: affichage des N villes les plus peuplées d'une département
- * donné
+ * Cas d'utilisation: affichage des N villes les plus peuplÃ©es d'une dÃ©partement
+ * donnÃ©
  * 
  * @author DIGINAMIC
  *
@@ -21,7 +21,7 @@ public class RechercheVillesPlusPeupleesDepartement extends MenuService {
 	@Override
 	public void traiter(Recensement recensement, Scanner scanner) {
 
-		System.out.println("Veuillez saisir un numéro de département:");
+		System.out.println("Veuillez saisir un numÃ©ro de dÃ©partement:");
 		String nomDept = scanner.nextLine();
 
 		System.out.println("Veuillez saisir un nombre de villes:");
@@ -40,7 +40,7 @@ public class RechercheVillesPlusPeupleesDepartement extends MenuService {
 		Collections.sort(villesDept, new EnsemblePopComparateur(false));
 
 		if (villesDept.size() > 0) {
-			System.out.println("Les " + nbVilles + " villes les plus peuplées du département " + nomDept + " :");
+			System.out.println("Les " + nbVilles + " villes les plus peuplÃ©es du dÃ©partement " + nomDept + " :");
 			for (int i = 0; i < nbVilles; i++) {
 				Ville ville = villesDept.get(i);
 				System.out.println(ville.getNom() + " : " + ville.getPopulation() + " habitants.");

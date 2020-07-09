@@ -10,8 +10,8 @@ import fr.diginamic.recensement.entites.Ville;
 import fr.diginamic.recensement.services.comparators.EnsemblePopComparateur;
 
 /**
- * Cas d'utilisation: affichage des N villes les plus peuplées d'une région
- * donnée
+ * Cas d'utilisation: affichage des N villes les plus peuplÃ©es d'une rÃ©gion
+ * donnÃ©e
  * 
  * @author DIGINAMIC
  *
@@ -21,7 +21,7 @@ public class RechercheVillesPlusPeupleesRegion extends MenuService {
 	@Override
 	public void traiter(Recensement recensement, Scanner scanner) {
 
-		System.out.println("Veuillez saisir un nom de région:");
+		System.out.println("Veuillez saisir un nom de rÃ©gion:");
 		String nomRegion = scanner.nextLine();
 
 		System.out.println("Veuillez saisir un nombre de villes:");
@@ -38,7 +38,7 @@ public class RechercheVillesPlusPeupleesRegion extends MenuService {
 		}
 
 		Collections.sort(villesRegions, new EnsemblePopComparateur(false));
-		System.out.println("Les " + nbVilles + " villes les plus peuplées de la région " + nomRegion + " sont :");
+		System.out.println("Les " + nbVilles + " villes les plus peuplÃ©es de la rÃ©gion " + nomRegion + " sont :");
 		if (villesRegions.size() > 0) {
 			for (int i = 0; i < nbVilles; i++) {
 				Ville ville = villesRegions.get(i);

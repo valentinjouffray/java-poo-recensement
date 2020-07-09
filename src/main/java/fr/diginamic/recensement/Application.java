@@ -15,16 +15,16 @@ import fr.diginamic.recensement.services.RechercheVillesPlusPeupleesRegion;
 import fr.diginamic.recensement.utils.RecensementUtils;
 
 /**
- * Application de traitement des données de recensement de population
+ * Application de traitement des donnÃ©es de recensement de population
  * 
  * @param args
  */
 public class Application {
 
 	/**
-	 * Point d'entrée
+	 * Point d'entrÃ©e
 	 * 
-	 * @param args arguments (non utilisés ici)
+	 * @param args arguments (non utilisÃ©s ici)
 	 */
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -33,7 +33,7 @@ public class Application {
 		Recensement recensement = RecensementUtils.lire(filePath);
 
 		if (recensement == null) {
-			System.out.println("L'application doit s'arrétée en raison d'une erreur d'exécution.");
+			System.out.println("L'application doit s'arrÃ©tÃ©e en raison d'une erreur d'exÃ©cution.");
 			System.exit(-1);
 		}
 
@@ -50,7 +50,7 @@ public class Application {
 			// Conversion du choix utilisateur en int
 			choix = Integer.parseInt(choixMenu);
 
-			// On exécute l'option correspondant au choix de l'utilisateur
+			// On exÃ©cute l'option correspondant au choix de l'utilisateur
 			switch (choix) {
 			case 1:
 				RecherchePopulationVilleService rechercheVille = new RecherchePopulationVilleService();
@@ -102,13 +102,13 @@ public class Application {
 	private static void afficherMenu() {
 		System.out.println("***** Recensement population *****");
 		System.out.println("1. Rechercher la population d'une ville");
-		System.out.println("2. Rechercher la population d'un département");
-		System.out.println("3. Rechercher la population d'une région");
+		System.out.println("2. Rechercher la population d'un dÃ©partement");
+		System.out.println("3. Rechercher la population d'une rÃ©gion");
 		System.out.println("4. Rechercher la population des villes d'un dept entre min et max");
-		System.out.println("5. Rechercher les N plus grandes villes d'un département.");
-		System.out.println("6. Rechercher les N plus grandes villes d'une région.");
-		System.out.println("7. Rechercher les N plus grands départements de France.");
-		System.out.println("8. Rechercher les N plus grandes régions de France.");
+		System.out.println("5. Rechercher les N plus grandes villes d'un dÃ©partement.");
+		System.out.println("6. Rechercher les N plus grandes villes d'une rÃ©gion.");
+		System.out.println("7. Rechercher les N plus grands dÃ©partements de France.");
+		System.out.println("8. Rechercher les N plus grandes rÃ©gions de France.");
 		System.out.println("9. Rechercher les N plus grandes villes de France.");
 		System.out.println("99. Sortir");
 	}
